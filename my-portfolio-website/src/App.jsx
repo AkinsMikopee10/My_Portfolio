@@ -1,48 +1,78 @@
+import React, { useEffect, useState, Suspense } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
+// Lazy load heavy sections
+const Projects = React.lazy(() => import("./components/Projects"));
+const Contact = React.lazy(() => import("./components/Contact"));
+
 const App = () => {
+  const [darkMode, setDarkMode] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  // Load saved theme preference
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setDarkMode(true);
+      document.documentElement.classList.add("dark");
+    }
+  }, []);
+
+  // Persist theme preference
+  useEffect(() => {
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
+
+  // Scroll progress indicator
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      setScrollProgress(progress);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="font-sans text-gray-900 bg-gray-50 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
-      {/* Sticky header with shadow */}
-      <Header />
+      {/* Scroll progress bar */}
+      <div
+        className="fixed top-0 left-0 h-1 bg-indigo-600 dark:bg-indigo-400 z-50 transition-all duration-300"
+        style={{ width: `${scrollProgress}%` }}
+      ></div>
+
+      {/* Header with dark mode toggle */}
+      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
 
       <main className="scroll-smooth">
-        {/* Hero section with full viewport height */}
-        <section
-          id="hero"
-          className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800"
+        <Hero />
+        <About />
+        <Skills />
+
+        {/* Lazy-loaded sections */}
+        <Suspense
+          fallback={
+            <div className="text-center py-20">Loading Projects...</div>
+          }
         >
-          <Hero />
-        </section>
-
-        {/* About section with alternating background */}
-        <section id="about" className="py-20 bg-white dark:bg-gray-800">
-          <About />
-        </section>
-
-        {/* Skills section with subtle background */}
-        <section id="skills" className="py-20 bg-gray-100 dark:bg-gray-700">
-          <Skills />
-        </section>
-
-        {/* Projects section with hover animations */}
-        <section id="projects" className="py-20 bg-white dark:bg-gray-800">
           <Projects />
-        </section>
-
-        {/* Contact section with gradient background */}
-        <section
-          id="contact"
-          className="py-20 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white"
+        </Suspense>
+        <Suspense
+          fallback={<div className="text-center py-20">Loading Contact...</div>}
         >
           <Contact />
-        </section>
+        </Suspense>
       </main>
 
       {/* Footer with top border */}
