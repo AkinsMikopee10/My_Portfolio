@@ -9,7 +9,7 @@ Contact Component
 
 const Contact = () => {
   return (
-    <section className=" py-20 container mx-auto px-6 text-center">
+    <section id="contact" className="py-20 container mx-auto px-6 text-center">
       <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
       <p className="mb-8 max-w-xl mx-auto">
         Whether you have a project in mind, want to collaborate, or just want to
@@ -22,7 +22,7 @@ const Contact = () => {
           href="mailto:akinsmikopee2507@gmail.com"
           className="text-lg text-indigo-600 hover:underline"
         >
-          akinsmikopee2507@gmail.com
+          Send Email
         </a>
 
         {/* Social Links */}
