@@ -1,5 +1,6 @@
 import React from "react";
 import SkillBadge from "./SkillBadge";
+import MotionWrapper from "./MotionWrapper";
 
 /*
 Skills Component
@@ -21,12 +22,14 @@ const skills = [
 const Skills = () => {
   return (
     <section id="skills" className="py-20 container mx-auto px-6 text-center">
-      <h2 className="text-3xl font-bold mb-10">Skills</h2>
-      <div className="flex flex-wrap justify-center gap-4">
-        {skills.map((skill, idx) => (
-          <SkillBadge key={idx} name={skill} />
-        ))}
-      </div>
+      <MotionWrapper>
+        <h2 className="text-3xl font-bold mb-10">Skills</h2>
+        <div className="flex flex-wrap justify-center gap-4">
+          {skills.map((skill, idx) => (
+            <SkillBadge key={idx} name={skill} />
+          ))}
+        </div>
+      </MotionWrapper>
     </section>
   );
 };

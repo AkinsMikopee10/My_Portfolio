@@ -2,7 +2,7 @@ import React from "react";
 
 const ProjectCard = ({ title, description, tech, live, github, image }) => {
   return (
-    <div className="bg-white rounded-xl shadow-sm p-5 flex flex-col hover:shadow-lg transition">
+    <div className="backdrop-blur-lg bg-white/70 rounded-xl shadow-lg p-5 flex flex-col hover:shadow-xl transition">
       <img
         src={image}
         alt={title}

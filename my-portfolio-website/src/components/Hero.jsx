@@ -8,7 +8,7 @@ Hero Component
 */
 const Hero = () => {
   return (
-    <section className="h-screen flex flex-col justify-center items-center bg-gradient-to-b from-indigo-50 to-white">
+    <section className="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-indigo-100 via-white to-indigo-50">
       <h1 className="text-4xl md:text-6xl font-bold mb-4">Hi, I'm Michael</h1>
       <p className="text-xl md:text-2xl mb-6">
         Frontend Developer | React & Tailwind Enthusiast

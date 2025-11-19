@@ -1,5 +1,6 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
+import MotionWrapper from "./MotionWrapper";
 import movieApp from "../assets/movie-finder.jpeg";
 import recipeApp from "../assets/recipe-finder.jpeg";
 import weatherApp from "../assets/weather-app.jpeg";
@@ -67,12 +68,14 @@ const projects = [
 const Projects = () => {
   return (
     <section id="projects" className="py-20 container mx-auto px-6">
-      <h2 className="text-3xl font-bold text-center mb-10">Projects</h2>
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, idx) => (
-          <ProjectCard key={idx} {...project} />
-        ))}
-      </div>
+      <MotionWrapper>
+        <h2 className="text-3xl font-bold text-center mb-10">Projects</h2>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project, idx) => (
+            <ProjectCard key={idx} {...project} />
+          ))}
+        </div>
+      </MotionWrapper>
     </section>
   );
 };
