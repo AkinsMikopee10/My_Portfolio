@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for better UX */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f3f4f6; /* gray-100 */
+}
+::-webkit-scrollbar-thumb {
+  background: #6366f1; /* indigo-500 */
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4f46e5; /* indigo-600 */
+}
+
+/* Dark mode scrollbar */
+html.dark ::-webkit-scrollbar-track {
+  background: #1f2937; /* gray-800 */
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #6366f1;
 }
