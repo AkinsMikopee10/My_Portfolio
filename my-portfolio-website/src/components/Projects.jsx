@@ -70,7 +70,8 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-20 container mx-auto px-6 bg-gray-50 dark:bg-gray-900 transition-colors duration-300 rounded-lg"
+      className="py-20 container mx-auto px-6 bg-gradient-to-b from-gray-100 via-white to-blue-50 
+  dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 rounded-lg"
     >
       <MotionWrapper>
         {/* Section Header */}

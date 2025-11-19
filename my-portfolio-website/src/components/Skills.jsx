@@ -24,7 +24,8 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="py-20 container mx-auto px-6 text-center bg-gray-50 dark:bg-gray-800 transition-colors duration-300 rounded-lg"
+      className="py-20 container mx-auto px-6 text-center bg-gradient-to-r from-indigo-50 to-pink-50 
+  dark:from-gray-800 dark:to-gray-900 transition-colors duration-300 rounded-lg"
     >
       <MotionWrapper>
         {/* Section Header */}

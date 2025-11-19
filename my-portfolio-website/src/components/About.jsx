@@ -7,7 +7,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-20 container mx-auto px-6 flex flex-col md:flex-row items-center gap-12"
+      className="py-20 container mx-auto px-6 flex flex-col md:flex-row items-center gap-12 bg-white dark:bg-gray-900 transition-colors duration-300"
     >
       <MotionWrapper>
         {/* Profile Image */}

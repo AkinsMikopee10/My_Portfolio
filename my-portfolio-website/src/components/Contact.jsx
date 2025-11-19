@@ -13,7 +13,8 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-20 container mx-auto px-6 text-center bg-gray-50 dark:bg-gray-900 transition-colors duration-300 rounded-lg"
+      className="py-20 container mx-auto px-6 text-center bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 
+  dark:from-gray-800 dark:via-gray-700 dark:to-gray-900 transition-colors duration-300 rounded-lg"
     >
       <MotionWrapper>
         {/* Section Header */}
@@ -53,7 +54,8 @@ const Contact = () => {
         <form
           action="https://formspree.io/f/xanvoddk" // my Formspree endpoint
           method="POST"
-          className="max-w-lg mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md space-y-6"
+          className="max-w-lg mx-auto bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 
+  dark:from-gray-800 dark:via-gray-700 dark:to-gray-900 p-8 rounded-lg shadow-md space-y-6"
         >
           <div>
             <label

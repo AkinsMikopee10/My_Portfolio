@@ -45,7 +45,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="font-sans text-gray-900 bg-gray-50 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <div className="font-sans text-gray-900 bg-gray-50 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 ease-in-out">
       {/* Scroll progress bar */}
       <div
         className="fixed top-0 left-0 h-1 bg-indigo-600 dark:bg-indigo-400 z-50 transition-all duration-300"
