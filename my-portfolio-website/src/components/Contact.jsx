@@ -1,12 +1,12 @@
 import React from "react";
 import MotionWrapper from "./MotionWrapper";
-import { Mail, Github, Linkedin } from "lucide-react"; // icons
+import { Mail, Github, Linkedin, Send } from "lucide-react"; // icons
 
 /*
 Contact Component
 - Provides ways for recruiters or hiring managers to reach you
 - Includes email, LinkedIn, GitHub
-- Clean, centered layout with icons and hover animations
+- Contact form for direct messages
 */
 
 const Contact = () => {
@@ -27,17 +27,7 @@ const Contact = () => {
         </p>
 
         {/* Contact Options */}
-        <div className="flex flex-col md:flex-row justify-center gap-6 items-center">
-          {/* Email */}
-          <a
-            href="mailto:akinsmikopee2507@gmail.com"
-            className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-md shadow-md hover:bg-indigo-500 hover:scale-105 transition-transform duration-300"
-          >
-            <Mail size={20} />
-            Send Email
-          </a>
-
-          {/* GitHub */}
+        <div className="flex flex-col md:flex-row justify-center gap-6 items-center mb-12">
           <a
             href="https://github.com/AkinsMikopee10"
             target="_blank"
@@ -48,7 +38,6 @@ const Contact = () => {
             GitHub
           </a>
 
-          {/* LinkedIn */}
           <a
             href="https://www.linkedin.com/in/michael-akinyemi"
             target="_blank"
@@ -59,6 +48,69 @@ const Contact = () => {
             LinkedIn
           </a>
         </div>
+
+        {/* Contact Form */}
+        <form
+          action="https://formspree.io/f/xanvoddk" // my Formspree endpoint
+          method="POST"
+          className="max-w-lg mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md space-y-6"
+        >
+          <div>
+            <label
+              htmlFor="name"
+              className="block text-left text-gray-700 dark:text-gray-300 mb-2 font-medium"
+            >
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 dark:bg-gray-700 text-gray-800 dark:text-gray-100"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="email"
+              className="block text-left text-gray-700 dark:text-gray-300 mb-2 font-medium"
+            >
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 dark:bg-gray-700 text-gray-800 dark:text-gray-100"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="message"
+              className="block text-left text-gray-700 dark:text-gray-300 mb-2 font-medium"
+            >
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 dark:bg-gray-700 text-gray-800 dark:text-gray-100"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-md shadow-md hover:bg-indigo-500 hover:scale-105 transition-transform duration-300"
+          >
+            <Send size={20} />
+            Send Message
+          </button>
+        </form>
       </MotionWrapper>
     </section>
   );
