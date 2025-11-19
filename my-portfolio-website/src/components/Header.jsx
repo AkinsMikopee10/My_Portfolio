@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Sun, Moon } from "lucide-react"; // import Lucide icons
 
-const Header = () => {
+const Header = ({ darkMode, setDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
 
   const navLinks = [
     { href: "#about", label: "About" },
@@ -11,15 +10,6 @@ const Header = () => {
     { href: "#skills", label: "Skills" },
     { href: "#contact", label: "Contact" },
   ];
-
-  // Sync dark mode with <html> class
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [darkMode]);
 
   return (
     <header className="fixed top-0 w-full bg-white dark:bg-gray-900 shadow-md z-50 transition-colors duration-300">
