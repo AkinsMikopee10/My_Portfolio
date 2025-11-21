@@ -1,5 +1,5 @@
 import React from "react";
-import profilePic from "../assets/profile.jpeg";
+import profilePic from "../assets/Socials dp.jpg";
 import MotionWrapper from "./MotionWrapper";
 import { FileText } from "lucide-react"; // resume icon
 
@@ -36,7 +36,7 @@ const About = () => {
 
           {/* CTA Button */}
           <a
-            href="/public/Michael_Akinyemi_CV_2025.pdf" // replace with actual resume or LinkedIn link
+            href="/src/assets/Michael_Akinyemi_CV_2025.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-md shadow-md hover:bg-indigo-500 hover:scale-105 transition-transform duration-300"

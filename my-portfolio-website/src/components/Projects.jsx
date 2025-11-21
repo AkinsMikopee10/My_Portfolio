@@ -27,7 +27,7 @@ const projects = [
     image: movieApp,
   },
   {
-    title: "Recipe App",
+    title: "Recipe Finder App",
     description: "Save and search recipes with local storage persistence.",
     tech: ["React", "Tailwind", "Vite", "LocalStorage"],
     live: "https://recipe-finder-app-lilac-nine.vercel.app/",
