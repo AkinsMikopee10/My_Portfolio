@@ -36,7 +36,7 @@ const About = () => {
 
           {/* CTA Button */}
           <a
-            href="/src/assets/Michael_Akinyemi_CV_2025.pdf"
+            href="/Michael_Akinyemi_CV_2025.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-md shadow-md hover:bg-indigo-500 hover:scale-105 transition-transform duration-300"
