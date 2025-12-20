@@ -27,7 +27,8 @@ const About = () => {
           <p className="mb-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
             I’m a frontend developer passionate about building modern,
             responsive web applications using React and TailwindCSS. I enjoy
-            creating clean UI, smooth UX, and efficient, maintainable code.
+            creating clean User Interface(UI), smooth User Experience(UX), and
+            efficient, maintainable code.
           </p>
           <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
             My goal is to contribute to impactful projects, continuously learn,

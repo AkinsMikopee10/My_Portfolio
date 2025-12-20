@@ -2,8 +2,8 @@ import React from "react";
 import ProjectCard from "./ProjectCard";
 import MotionWrapper from "./MotionWrapper";
 import { FolderGit2 } from "lucide-react"; // section icon
-import movieApp from "../assets/movie-finder.jpeg";
-import recipeApp from "../assets/recipe-finder.jpeg";
+import movieApp from "../assets/CineScope.jpeg";
+import flowtrack from "../assets/FlowTrack.jpeg";
 import weatherApp from "../assets/weather-app.jpeg";
 import gameExplorer from "../assets/game-explorer.jpeg";
 import zenspace from "../assets/zenspace.jpeg";
@@ -17,23 +17,31 @@ Projects Component
 
 const projects = [
   {
-    title: "Movie Finder App",
+    title: "CineScope",
     description:
-      "Search movies with OMDB API, responsive UI, loader, and no-results message.",
-    tech: ["React", "Tailwind", "Vite", "OMDB API"],
-    live: "https://movie-finder-alpha-six.vercel.app/",
+      "CineScope is a modern movie discovery app built with React and Vite. It connects to the TMDB API to let users search, explore, and save their favorite films. The goal was to create an app that feels like a real product: fast, polished, and enjoyable to use",
+    tech: [
+      "React",
+      "TailwindCSS",
+      "Framer Motion",
+      "Vite",
+      "TMDB REST API",
+      "localStorage",
+    ],
+    live: "https://cinescope-movies-iota.vercel.app/",
     github:
       "https://github.com/AkinsMikopee10/My_Projects/tree/main/movie-finder",
     image: movieApp,
   },
   {
-    title: "Recipe Finder App",
-    description: "Save and search recipes with local storage persistence.",
-    tech: ["React", "Tailwind", "Vite", "LocalStorage"],
-    live: "https://recipe-finder-app-lilac-nine.vercel.app/",
+    title: "FlowTrack",
+    description:
+      "This is a landing page for a tool that is designed to help you stay focused, organized, and consistent. With a clean interface, intuitive tools, and a distraction-free dashboard, you can spend less time managing tasks and more time doing meaningful work.",
+    tech: ["React", "Tailwind", "Vite", "Framer Motion"],
+    live: "https://flowtrack-phi.vercel.app/",
     github:
-      "https://github.com/AkinsMikopee10/My_Projects/tree/main/recipe-finder-app",
-    image: recipeApp,
+      "https://github.com/AkinsMikopee10/My_Projects/tree/main/flowtrack-landing",
+    image: flowtrack,
   },
   {
     title: "Weather App",
