@@ -10,14 +10,18 @@ Skills Component
 */
 
 const skills = [
-  { name: "React", level: "Intermediate" },
-  { name: "TailwindCSS", level: "Intermediate" },
-  { name: "JavaScript", level: "Intermediate" },
-  { name: "Vite", level: "Intermediate" },
-  { name: "HTML", level: "Intermediate" },
-  { name: "CSS", level: "Intermediate" },
-  { name: "Git", level: "Intermediate" },
-  { name: "API Integration", level: "Intermediate" },
+  { name: "React" },
+  { name: "TailwindCSS" },
+  { name: "JavaScript" },
+  { name: "Node.js" },
+  { name: "Express" },
+  { name: "MongoDB" },
+  { name: "Vite" },
+  { name: "HTML" },
+  { name: "CSS" },
+  { name: "Git" },
+  { name: "Framer Motion" },
+  { name: "API Integration" },
 ];
 
 const Skills = () => {

@@ -7,6 +7,7 @@ import flowtrack from "../assets/FlowTrack.jpeg";
 import weatherApp from "../assets/weather-app.jpeg";
 import gameExplorer from "../assets/game-explorer.jpeg";
 import zenspace from "../assets/zenspace.jpeg";
+import VTU from "../assets/vtu-web-app.jpeg";
 
 /*
 Projects Component
@@ -16,6 +17,24 @@ Projects Component
 */
 
 const projects = [
+  {
+    title: "VTU-WEB-APP (Ongoing)",
+    description:
+      "A full-stack VTU billing platform built with React, Tailwind, Node.js, Express, and MongoDB. Features wallet funding, airtime/data/cable/electricity purchases, transaction history with receipt generation, and a full admin dashboard for user and plan management.",
+    tech: ["React", "TailwindCSS", "Node.js", "Express", "MongoDB", "Vite"],
+    live: "https://vtu-web-app-gilt.vercel.app/",
+    github: "https://github.com/AkinsMikopee10/My_Projects/tree/main/VTU",
+    image: VTU,
+  },
+  {
+    title: "Game Explorer",
+    description:
+      "Discover, search, and save favorite video games using the RAWG API with a modern UI.",
+    tech: ["React", "Tailwind", "Vite", "RAWG API"],
+    live: "https://game-explorer-app-azure.vercel.app/",
+    github: "https://github.com/AkinsMikopee10/alx-fe-capstone-project",
+    image: gameExplorer,
+  },
   {
     title: "CineScope",
     description:
@@ -52,15 +71,6 @@ const projects = [
     github:
       "https://github.com/AkinsMikopee10/My_Projects/tree/main/weather-app",
     image: weatherApp,
-  },
-  {
-    title: "Game Explorer",
-    description:
-      "Discover, search, and save favorite video games using the RAWG API with a modern UI.",
-    tech: ["React", "Tailwind", "Vite", "RAWG API"],
-    live: "https://game-explorer-app-azure.vercel.app/",
-    github: "https://github.com/AkinsMikopee10/alx-fe-capstone-project",
-    image: gameExplorer,
   },
   {
     title: "ZenSpace App",
