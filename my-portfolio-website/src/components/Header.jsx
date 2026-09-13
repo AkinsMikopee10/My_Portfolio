@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Sun, Moon } from "lucide-react"; // import Lucide icons
+import { Menu, X, Sun, Moon } from "lucide-react";
 
 const Header = ({ darkMode, setDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,20 +12,23 @@ const Header = ({ darkMode, setDarkMode }) => {
   ];
 
   return (
-    <header className="fixed top-0 w-full bg-white dark:bg-gray-900 shadow-md z-50 transition-colors duration-300">
-      <nav className="container mx-auto flex justify-between items-center py-4 px-6">
+    <header className="fixed top-0 z-50 w-full border-b border-portfolio-border bg-portfolio-surface/95 backdrop-blur-sm dark:border-portfolio-dark-border dark:bg-portfolio-dark-surface/95">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <div className="text-xl font-bold bg-gradient-to-r from-indigo-500 to-pink-500 bg-clip-text text-transparent">
+        <a
+          href="#home"
+          className="text-lg font-semibold tracking-tight text-portfolio-text transition-colors duration-200 dark:text-portfolio-dark-text"
+        >
           Michael Akinyemi
-        </div>
+        </a>
 
-        {/* Desktop Nav */}
-        <ul className="hidden md:flex gap-8 font-medium">
+        {/* Desktop Navigation */}
+        <ul className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="relative hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors duration-200"
+                className="text-sm font-medium text-portfolio-muted transition-colors duration-200 hover:text-portfolio-accent dark:text-portfolio-dark-muted dark:hover:text-portfolio-dark-accent"
               >
                 {link.label}
               </a>
@@ -34,42 +37,47 @@ const Header = ({ darkMode, setDarkMode }) => {
         </ul>
 
         {/* Controls */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           {/* Dark Mode Toggle */}
           <button
+            type="button"
             onClick={() => setDarkMode(!darkMode)}
-            className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition ease-in-out"
+            className="flex h-9 w-9 items-center justify-center rounded-md border border-portfolio-border text-portfolio-text transition-colors duration-200 hover:border-portfolio-accent hover:text-portfolio-accent dark:border-portfolio-dark-border dark:text-portfolio-dark-text dark:hover:border-portfolio-dark-accent dark:hover:text-portfolio-dark-accent"
             aria-label="Toggle dark mode"
           >
-            {darkMode ? <Moon size={20} /> : <Sun size={20} />}
+            {darkMode ? <Moon size={17} /> : <Sun size={17} />}
           </button>
 
           {/* Mobile Menu Button */}
           <button
+            type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-indigo-600 dark:text-indigo-400 focus:outline-none"
-            aria-label="Toggle navigation"
+            className="flex h-9 w-9 items-center justify-center rounded-md border border-portfolio-border text-portfolio-text transition-colors duration-200 hover:border-portfolio-accent hover:text-portfolio-accent dark:border-portfolio-dark-border dark:text-portfolio-dark-text dark:hover:border-portfolio-dark-accent dark:hover:text-portfolio-dark-accent md:hidden"
+            aria-label={isOpen ? "Close navigation" : "Open navigation"}
+            aria-expanded={isOpen}
           >
-            {isOpen ? "✕" : "☰"}
+            {isOpen ? <X size={19} /> : <Menu size={19} />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Nav */}
+      {/* Mobile Navigation */}
       {isOpen && (
-        <ul className="md:hidden bg-white dark:bg-gray-900 shadow-lg flex flex-col gap-4 py-6 px-6 font-medium">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="block hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors duration-200"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="border-t border-portfolio-border bg-portfolio-surface dark:border-portfolio-dark-border dark:bg-portfolio-dark-surface md:hidden">
+          <ul className="mx-auto flex max-w-6xl flex-col px-6 py-4">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="block border-b border-portfolio-border py-4 text-sm font-medium text-portfolio-text transition-colors duration-200 last:border-b-0 hover:text-portfolio-accent dark:border-portfolio-dark-border dark:text-portfolio-dark-text dark:hover:text-portfolio-dark-accent"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
     </header>
   );

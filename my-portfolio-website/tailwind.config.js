@@ -6,24 +6,37 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"], // cleaner modern font
-        display: ["Poppins", "sans-serif"], // for headings
+        display: ["Inter", "system-ui", "sans-serif"], // for headings
       },
+
       colors: {
-        brand: {
-          light: "#6366F1", // indigo-500
-          DEFAULT: "#4F46E5", // indigo-600
-          dark: "#4338CA", // indigo-700
+        portfolio: {
+          surface: "#F7F6F2",
+          neutral: "#ECEAE4",
+          text: "#111111",
+          muted: "#5F5F5A",
+          border: "#D8D6CF",
+          accent: "#C65D3A",
+          accentDark: "#9E4327",
+          accentSoft: "#E9D8D0",
+
+          "dark-surface": "#141412",
+          "dark-neutral": "#20201D",
+          "dark-text": "#F4F2EC",
+          "dark-muted": "#A8A69F",
+          "dark-border": "#353530",
+          "dark-accent": "#D87957",
+          "dark-accentDark": "#E08A6B",
+          "dark-accentSoft": "#382720",
         },
       },
+
       boxShadow: {
-        glow: "0 0 15px rgba(99, 102, 241, 0.6)", // subtle glowing effect
-      },
-      transitionTimingFunction: {
-        "in-expo": "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
-        "out-expo": "cubic-bezier(0.19, 1, 0.22, 1)",
+        subtle: "0 4px 20px rgba(17, 17, 17, 0.08)",
       },
     },
   },
+
   plugins: [
     require("@tailwindcss/forms"), // better form styling
     require("@tailwindcss/typography"), // prose classes for About/Projects

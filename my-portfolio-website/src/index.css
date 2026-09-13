@@ -7,25 +7,45 @@ html {
   scroll-behavior: smooth;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f7f6f2;
+  color: #111111;
+  font-family: Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html.dark body {
+  background: #141412;
+  color: #f4f2ec;
+}
+
+/* Selection */
+::selection {
+  background: #e9d8d0;
+  color: #111111;
+}
+
 /* Custom scrollbar for better UX */
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #f3f4f6; /* gray-100 */
-}
-::-webkit-scrollbar-thumb {
-  background: #6366f1; /* indigo-500 */
-  border-radius: 9999px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #4f46e5; /* indigo-600 */
+  background: #eceae4;
 }
 
-/* Dark mode scrollbar */
-html.dark ::-webkit-scrollbar-track {
-  background: #1f2937; /* gray-800 */
+::-webkit-scrollbar-thumb {
+  background: #5f5f5a;
 }
-html.dark ::-webkit-scrollbar-thumb {
-  background: #6366f1;
+
+::-webkit-scrollbar-thumb:hover {
+  background: #252525;
 }
