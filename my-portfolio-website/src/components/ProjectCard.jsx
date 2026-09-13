@@ -1,62 +1,94 @@
 import React from "react";
-import { ExternalLink, Github } from "lucide-react"; // icons for buttons
+import { ArrowUpRight, Github } from "lucide-react"; // icons for buttons
 
-const ProjectCard = ({ title, description, tech, live, github, image }) => {
+const ProjectCard = ({
+  title,
+  description,
+  tech,
+  live,
+  github,
+  image,
+  number,
+  featured = false,
+}) => {
   return (
-    <div className="backdrop-blur-lg bg-white/70 dark:bg-gray-800/70 rounded-xl shadow-lg p-5 flex flex-col hover:shadow-glow hover:-translate-y-1 transition-transform duration-300">
+    <article
+      className={`group flex flex-col border border-portfolio-border bg-white dark:border-portfolio-dark-border dark:bg-portfolio-dark-neutral ${
+        featured ? "lg:col-span-2" : ""
+      }`}
+    >
       {/* Project Image */}
-      <div className="overflow-hidden rounded-md mb-4">
+      <div className="overflow-hidden border-b border-portfolio-border dark:border-portfolio-dark-border">
         <img
           src={image}
           alt={title}
-          className="object-cover h-48 w-full rounded-md transform hover:scale-105 transition-transform duration-300"
+          className={`w-full object-cover transition-transform duration-500 group-hover:scale-[1.02] ${
+            featured ? "h-72 md:h-96" : "h-56"
+          }`}
         />
       </div>
 
-      {/* Title */}
-      <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">
-        {title}
-      </h3>
-
-      {/* Description */}
-      <p className="mb-3 text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-        {description}
-      </p>
-
-      {/* Tech Stack */}
-      <div className="flex flex-wrap gap-2 mb-4">
-        {tech.map((t, idx) => (
-          <span
-            key={idx}
-            className="bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 px-2 py-1 rounded-full text-xs font-medium"
-          >
-            {t}
+      {/* Project Content */}
+      <div className="flex flex-1 flex-col p-6 md:p-7">
+        {/* Project Number */}
+        <div className="mb-6 flex items-center justify-between">
+          <span className="text-xs font-medium tracking-[0.16em] text-portfolio-muted dark:text-portfolio-dark-muted">
+            {number}
           </span>
-        ))}
-      </div>
 
-      {/* Action Buttons */}
-      <div className="flex gap-3 mt-auto">
-        <a
-          href={live}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 text-white bg-indigo-600 px-4 py-2 rounded-md shadow-md hover:bg-indigo-500 hover:scale-105 transition-transform duration-300"
-        >
-          <ExternalLink size={16} />
-          Live
-        </a>
-        <a
-          href={github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 border border-indigo-600 dark:border-indigo-400 px-4 py-2 rounded-md hover:bg-indigo-50 dark:hover:bg-gray-700 transition-colors duration-300"
-        >
-          <Github size={16} />
-          GitHub
-        </a>
+          {featured && (
+            <span className="text-xs font-medium uppercase tracking-[0.14em] text-portfolio-accent dark:text-portfolio-dark-accent">
+              Featured
+            </span>
+          )}
+        </div>
+
+        {/* Title */}
+        <h3 className="text-2xl font-semibold tracking-tight text-portfolio-text dark:text-portfolio-dark-text">
+          {title}
+        </h3>
+
+        {/* Description */}
+        <p className="mt-4 max-w-2xl text-sm leading-7 text-portfolio-muted dark:text-portfolio-dark-muted md:text-base">
+          {description}
+        </p>
+
+        {/* Tech Stack */}
+        <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2 border-t border-portfolio-border pt-5 dark:border-portfolio-dark-border">
+          {tech.map((item) => (
+            <span
+              key={item}
+              className="text-xs font-medium text-portfolio-text dark:text-portfolio-dark-text"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+
+        {/* Action Buttons */}
+        <div className="mt-7 flex flex-wrap gap-3">
+          <a
+            href={live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-portfolio-text bg-portfolio-text px-5 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:border-portfolio-accent hover:bg-portfolio-accent dark:border-portfolio-dark-text dark:bg-portfolio-dark-text dark:text-portfolio-dark-surface dark:hover:border-portfolio-dark-accent dark:hover:bg-portfolio-dark-accent"
+          >
+            Live site
+            <ArrowUpRight size={16} aria-hidden="true" />
+          </a>
+
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-portfolio-border px-5 py-2.5 text-sm font-medium text-portfolio-text transition-colors duration-200 hover:border-portfolio-accent hover:text-portfolio-accent dark:border-portfolio-dark-border dark:text-portfolio-dark-text dark:hover:border-portfolio-dark-accent dark:hover:text-portfolio-dark-accent"
+          >
+            GitHub
+            <Github size={16} aria-hidden="true" />
+          </a>
+        </div>
       </div>
-    </div>
+    </article>
   );
 };
 
