@@ -1,81 +1,63 @@
 import React from "react";
-import { Github, Linkedin, Mail } from "lucide-react"; // icons
-
-/*
-Footer Component
-- Shows copyright and quick navigation links
-- Includes social icons
-- Dark mode + responsive layout
-*/
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
+  const navLinks = [
+    { href: "#about", label: "About" },
+    { href: "#projects", label: "Projects" },
+    { href: "#skills", label: "Skills" },
+    { href: "#contact", label: "Contact" },
+  ];
+
   return (
-    <footer className="bg-gray-100 dark:bg-gray-900 border-t mt-20 py-8 transition-colors duration-300">
-      <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="bg-portfolio-surface px-6 py-8 dark:bg-portfolio-dark-surface">
+      <div className="mx-auto flex max-w-6xl flex-col gap-6 border-t border-portfolio-border pt-8 dark:border-portfolio-dark-border md:flex-row md:items-center md:justify-between">
         {/* Copyright */}
-        <p className="text-gray-600 dark:text-gray-400 text-sm text-center md:text-left">
-          © {new Date().getFullYear()} Michael Akinyemi. All Rights Reserved.
+        <p className="text-sm text-portfolio-muted dark:text-portfolio-dark-muted">
+          © {new Date().getFullYear()} Michael Akinyemi
         </p>
 
         {/* Quick Navigation */}
-        <ul className="flex gap-6 text-sm font-medium text-gray-700 dark:text-gray-300">
-          <li>
-            <a
-              href="#about"
-              className="hover:text-indigo-500 dark:hover:text-indigo-400 transition"
-            >
-              About
-            </a>
-          </li>
-          <li>
-            <a
-              href="#skills"
-              className="hover:text-indigo-500 dark:hover:text-indigo-400 transition"
-            >
-              Skills
-            </a>
-          </li>
-          <li>
-            <a
-              href="#projects"
-              className="hover:text-indigo-500 dark:hover:text-indigo-400 transition"
-            >
-              Projects
-            </a>
-          </li>
-          <li>
-            <a
-              href="#contact"
-              className="hover:text-indigo-500 dark:hover:text-indigo-400 transition"
-            >
-              Contact
-            </a>
-          </li>
-        </ul>
+        <nav aria-label="Footer navigation">
+          <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="text-portfolio-muted transition-colors duration-200 hover:text-portfolio-accent dark:text-portfolio-dark-muted dark:hover:text-portfolio-dark-accent"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
         {/* Social Icons */}
-        <div className="flex gap-4">
+        <div className="flex items-center justify-center gap-4">
           <a
             href="mailto:akinsmikopee2507@gmail.com"
-            className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition"
+            className="text-portfolio-muted transition-colors duration-200 hover:text-portfolio-accent dark:text-portfolio-dark-muted dark:hover:text-portfolio-dark-accent"
             aria-label="Email"
           >
             <Mail size={18} />
           </a>
+
           <a
             href="https://github.com/AkinsMikopee10"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition"
+            className="text-portfolio-muted transition-colors duration-200 hover:text-portfolio-accent dark:text-portfolio-dark-muted dark:hover:text-portfolio-dark-accent"
             aria-label="GitHub"
           >
             <Github size={18} />
           </a>
+
           <a
             href="https://www.linkedin.com/in/michael-akinyemi"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition"
+            className="text-portfolio-muted transition-colors duration-200 hover:text-portfolio-accent dark:text-portfolio-dark-muted dark:hover:text-portfolio-dark-accent"
             aria-label="LinkedIn"
           >
             <Linkedin size={18} />
