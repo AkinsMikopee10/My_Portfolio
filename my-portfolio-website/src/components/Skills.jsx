@@ -1,7 +1,5 @@
 import React from "react";
 import SkillBadge from "./SkillBadge";
-import MotionWrapper from "./MotionWrapper";
-import { Code } from "lucide-react"; // icon for section header
 
 /*
 Skills Component
@@ -10,43 +8,52 @@ Skills Component
 */
 
 const skills = [
-  { name: "React" },
-  { name: "TailwindCSS" },
-  { name: "JavaScript" },
-  { name: "Node.js" },
-  { name: "Express" },
-  { name: "MongoDB" },
-  { name: "Vite" },
-  { name: "HTML" },
-  { name: "CSS" },
-  { name: "Git" },
-  { name: "Framer Motion" },
-  { name: "API Integration" },
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Tailwind CSS",
+  "Vite",
+  "Node.js",
+  "Express",
+  "MongoDB",
+  "Git & GitHub",
+  "Framer Motion",
+  "API Integration",
 ];
 
 const Skills = () => {
   return (
     <section
       id="skills"
-      className="py-20 container mx-auto px-6 text-center bg-gradient-to-r from-indigo-50 to-pink-50 
-  dark:from-gray-800 dark:to-gray-900 transition-colors duration-300 rounded-lg"
+      className="border-b border-portfolio-border bg-portfolio-surface px-6 py-24 dark:border-portfolio-dark-border dark:bg-portfolio-dark-surface md:py-32"
     >
-      <MotionWrapper>
+      <div className="mx-auto max-w-6xl">
         {/* Section Header */}
-        <div className="flex items-center justify-center gap-2 mb-10">
-          <Code size={28} className="text-indigo-600 dark:text-indigo-400" />
-          <h2 className="text-4xl font-extrabold text-gray-900 dark:text-gray-100">
-            Skills
-          </h2>
+        <div className="grid gap-6 border-b border-portfolio-border pb-8 dark:border-portfolio-dark-border md:grid-cols-[0.8fr_1.2fr] md:items-end">
+          <div>
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-portfolio-accent dark:text-portfolio-dark-accent">
+              Tools & Technologies
+            </p>
+
+            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-portfolio-text dark:text-portfolio-dark-text md:text-5xl">
+              Skills
+            </h2>
+          </div>
+
+          <p className="max-w-xl text-base leading-7 text-portfolio-muted dark:text-portfolio-dark-muted md:text-lg">
+            Technologies I use to build responsive interfaces, connect
+            applications to APIs, and develop full-stack projects.
+          </p>
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-          {skills.map((skill, idx) => (
-            <SkillBadge key={idx} name={skill.name} level={skill.level} />
+        <div className="mt-10 grid gap-x-12 sm:grid-cols-2 lg:grid-cols-3">
+          {skills.map((skill) => (
+            <SkillBadge key={skill} name={skill} />
           ))}
         </div>
-      </MotionWrapper>
+      </div>
     </section>
   );
 };
