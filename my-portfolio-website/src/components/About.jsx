@@ -1,52 +1,54 @@
 import React from "react";
-import profilePic from "../assets/Socials dp.jpg";
-import MotionWrapper from "./MotionWrapper";
-import { FileText } from "lucide-react"; // resume icon
+import profilePic from "../assets/Profile Picture.png";
 
 const About = () => {
   return (
     <section
       id="about"
-      className="py-20 container mx-auto px-6 flex flex-col md:flex-row items-center gap-12 bg-white dark:bg-gray-900 transition-colors duration-300"
+      className="border-b border-portfolio-border bg-portfolio-surface px-6 py-24 dark:border-portfolio-dark-border dark:bg-portfolio-dark-surface md:py-32"
     >
-      <MotionWrapper>
+      <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[0.8fr_1.2fr] md:gap-20">
         {/* Profile Image */}
-        <div className="md:w-1/3 flex justify-center md:justify-start">
+        <div className="flex items-start">
           <img
             src={profilePic}
             alt="Michael Akinyemi"
-            className="rounded-full shadow-lg w-64 h-64 object-cover ring-4 ring-indigo-500 hover:scale-105 transition-transform duration-300"
+            className="h-64 w-64 rounded-full object-cover object-top md:h-72 md:w-72"
           />
         </div>
 
-        {/* Bio Text */}
-        <div className="md:w-2/3 text-center md:text-left">
-          <h2 className="text-4xl font-extrabold mb-6 text-gray-900 dark:text-gray-100">
+        {/* About Content */}
+        <div>
+          <p className="mb-5 text-sm font-medium uppercase tracking-[0.18em] text-portfolio-accent dark:text-portfolio-dark-accent">
             About Me
-          </h2>
-          <p className="mb-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            I’m a frontend developer passionate about building modern,
-            responsive web applications using React and TailwindCSS. I enjoy
-            creating clean User Interface(UI), smooth User Experience(UX), and
-            efficient, maintainable code.
-          </p>
-          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-            My goal is to contribute to impactful projects, continuously learn,
-            and deliver value through creative solutions.
           </p>
 
-          {/* CTA Button */}
-          <a
-            href="/Michael_Akinyemi_CV_2025.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-md shadow-md hover:bg-indigo-500 hover:scale-105 transition-transform duration-300"
-          >
-            <FileText size={20} />
-            View Resume
-          </a>
+          <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight text-portfolio-text dark:text-portfolio-dark-text md:text-5xl">
+            Building thoughtful interfaces with a focus on clarity and
+            usability.
+          </h2>
+
+          <div className="mt-8 max-w-2xl space-y-5 text-base leading-8 text-portfolio-muted dark:text-portfolio-dark-muted md:text-lg">
+            <p>
+              I'm a frontend developer who enjoys turning ideas and designs into
+              responsive, accessible web interfaces. I work primarily with HTML,
+              CSS, JavaScript, React, and Tailwind CSS.
+            </p>
+
+            <p>
+              I care about writing code that is understandable and maintainable,
+              while paying attention to the details that make an interface feel
+              natural to use across different screen sizes.
+            </p>
+
+            <p>
+              I'm continuing to grow as a developer by building real projects,
+              learning modern frontend practices, and improving how I approach
+              problems from both a technical and user perspective.
+            </p>
+          </div>
         </div>
-      </MotionWrapper>
+      </div>
     </section>
   );
 };
