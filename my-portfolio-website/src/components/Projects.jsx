@@ -9,9 +9,11 @@ import VTU from "../assets/vtu-web-app.jpeg";
 
 const projects = [
   {
-    title: "VTU-WEB-APP",
+    title: "BetaPlug",
     description:
       "A full-stack VTU billing platform built with React, Tailwind CSS, Node.js, Express, and MongoDB. It includes wallet funding, service purchases, transaction history, receipt generation, and an administrative dashboard.",
+    focus:
+      "Full-stack architecture, API integration, authentication, and transaction workflows.",
     tech: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB", "Vite"],
     live: "https://vtu-web-app-gilt.vercel.app/",
     github: "https://github.com/AkinsMikopee10/My_Projects/tree/main/VTU",
@@ -21,6 +23,8 @@ const projects = [
     title: "Game Explorer",
     description:
       "A dynamic game discovery web app built with React using the RAWG API. Users can easily search, filter, and explore detailed game insights and save their favorite titles to a personal library through a sleek, responsive interface.",
+    focus:
+      "API integration, search and filtering, responsive UI, and local data persistence.",
     tech: ["React", "Tailwind CSS", "Vite", "RAWG API"],
     live: "https://game-explorer-app-azure.vercel.app/",
     github: "https://github.com/AkinsMikopee10/alx-fe-capstone-project",
@@ -30,6 +34,8 @@ const projects = [
     title: "CineScope",
     description:
       "A modern movie discovery app built with React and Vite. It connects to the TMDB API to let users search, explore, and save their favorite films. The goal was to create an app that feels like a real product: fast, polished, and enjoyable to use",
+    focus:
+      "API integration, search experiences, responsive UI, and local data persistence.",
     tech: [
       "React",
       "Tailwind CSS",
@@ -47,6 +53,8 @@ const projects = [
     title: "FlowTrack",
     description:
       "A focused productivity landing page designed around helping users organize tasks and maintain consistent daily progress.",
+    focus:
+      "Responsive interface design, component structure, and polished frontend interactions.",
     tech: ["React", "Tailwind CSS", "Vite", "Framer Motion"],
     live: "https://flowtrack-phi.vercel.app/",
     github:
@@ -57,6 +65,8 @@ const projects = [
     title: "Weather App",
     description:
       "A responsive weather application that uses the OpenWeatherMap API to display current weather conditions for searched locations.",
+    focus:
+      "API integration, responsive layouts, asynchronous data handling, and dynamic UI.",
     tech: ["React", "Tailwind CSS", "Vite", "OpenWeatherMap API"],
     live: "https://weather-app-tau-tawny-66.vercel.app/",
     github:
@@ -67,6 +77,8 @@ const projects = [
     title: "ZenSpace",
     description:
       "A wellness and focus application featuring a breathing timer, mood tracking, reflection cards, and personal progress information.",
+    focus:
+      "Component-driven UI, local data persistence, interactive features, and responsive design.",
     tech: ["React", "Tailwind CSS", "Vite", "Framer Motion"],
     live: "https://zenspace-smoky.vercel.app/",
     github:

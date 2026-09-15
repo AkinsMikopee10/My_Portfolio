@@ -4,6 +4,7 @@ import { ArrowUpRight, Github } from "lucide-react"; // icons for buttons
 const ProjectCard = ({
   title,
   description,
+  focus,
   tech,
   live,
   github,
@@ -52,6 +53,17 @@ const ProjectCard = ({
         <p className="mt-4 max-w-2xl text-sm leading-7 text-portfolio-muted dark:text-portfolio-dark-muted md:text-base">
           {description}
         </p>
+
+        {/* Focus */}
+        <div className="mt-5 border-l-2 border-portfolio-accent pl-4 dark:border-portfolio-dark-accent">
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-portfolio-accent dark:text-portfolio-dark-accent">
+            What I built
+          </p>
+
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-portfolio-muted dark:text-portfolio-dark-muted">
+            {focus}
+          </p>
+        </div>
 
         {/* Tech Stack */}
         <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2 border-t border-portfolio-border pt-5 dark:border-portfolio-dark-border">
